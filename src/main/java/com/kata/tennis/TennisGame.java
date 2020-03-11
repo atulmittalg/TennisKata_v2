@@ -1,20 +1,25 @@
 package com.kata.tennis;
 
 public class TennisGame {
-    private int playerOneScore;
-    private int playerTwoScore;
+
+    private Player[] players = new Player[2];
+
+    TennisGame(){
+        players[0] = new Player();
+        players[1] = new Player();
+    }
 
     public String getScore() {
-        if(playerTwoScore == 1){return "Love, Fifteen";}
-        if(playerOneScore == 1){return "Fifteen, Love";}
+        if(players[1].getPlayerScore() == 1){return "Love, Fifteen";}
+        if(players[0].getPlayerScore() == 1){return "Fifteen, Love";}
         return "Love All";
     }
 
     public void playerOneScoresPoint() {
-        playerOneScore++;
+        players[0].playerScoresPoint();
     }
 
     public void playerTwoScoresPoint() {
-        playerTwoScore++;
+        players[1].playerScoresPoint();
     }
 }
