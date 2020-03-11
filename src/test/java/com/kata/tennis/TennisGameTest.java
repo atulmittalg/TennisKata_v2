@@ -23,4 +23,10 @@ public class TennisGameTest {
         tennisGame.playerOneScoresPoint();
         assertEquals("Fifteen, Love", tennisGame.getScore());
     }
+
+    @Test
+    public void getScoreShouldReturnLoveFifteenWhenPlayerTwoScoresFirstPoint(){
+        tennisGame.playerTwoScoresPoint();
+        assertEquals("Love, Fifteen", tennisGame.getScore());
+    }
 }
