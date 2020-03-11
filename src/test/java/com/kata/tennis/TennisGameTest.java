@@ -9,4 +9,11 @@ public class TennisGameTest {
         TennisGame tennisGame = new TennisGame();
         assertEquals("Love All", tennisGame.getScore());
     }
+
+    @Test
+    public void getScoreShouldReturnFifteenLoveWhenPlayerOneScoresOnePoint(){
+        TennisGame tennisGame = new TennisGame();
+        tennisGame.playerOneScoresPoint();
+        assertEquals("Fifteen, Love", tennisGame.getScore());
+    }
 }
