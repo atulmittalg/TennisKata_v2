@@ -1,18 +1,25 @@
 package com.kata.tennis;
 
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class TennisGameTest {
+
+    private TennisGame tennisGame;
+
+    @Before
+    public void initializeTennisGameObject(){
+        tennisGame = new TennisGame();
+    }
+
     @Test
     public void getScoreShouldReturnLoveAllAtTheStartOfGame(){
-        TennisGame tennisGame = new TennisGame();
         assertEquals("Love All", tennisGame.getScore());
     }
 
     @Test
     public void getScoreShouldReturnFifteenLoveWhenPlayerOneScoresOnePoint(){
-        TennisGame tennisGame = new TennisGame();
         tennisGame.playerOneScoresPoint();
         assertEquals("Fifteen, Love", tennisGame.getScore());
     }
